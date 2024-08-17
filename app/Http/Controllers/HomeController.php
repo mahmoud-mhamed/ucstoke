@@ -33,11 +33,12 @@ class HomeController extends Controller
     {
         //create auto backup
         $b=Backup::where('dayCreate','<=',date('Y-m-d'))->get();
-        $state_create_backup=true;
+        $state_create_backup=false;
         if(count($b)>0){
             $state_create_backup=true;
 //            return redirect(route('backups.createBackup','createAuto'));
         }
+        $state_create_backup=true;
 
         //download backup automatic
         $state_download_backup=false;
@@ -47,6 +48,7 @@ class HomeController extends Controller
                 $state_download_backup=true;
             }
         }
+        $state_download_backup=false;
 
         $activities=[];
         if (Auth::user()->type==1 || Auth::user()->allow_manage_activities){

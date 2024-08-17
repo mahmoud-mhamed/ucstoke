@@ -53,11 +53,11 @@ class LoginController extends Controller
             $permit=Permit::first();
 
 
-            if ($permit->expire_date!=null){
-                /*if($permit->expire_date < date('Y-m-d') ||  $permit->login_counter >100){
-                    $expire_date='yes';
-                }*/
-            }
+//            if ($permit->expire_date!=null){
+//                if($permit->expire_date < date('Y-m-d') ||  $permit->login_counter >100){
+//                    $expire_date='yes';
+//                }
+//            }
 
 
             $ip=\Illuminate\Support\Facades\Request::ip();
@@ -74,13 +74,13 @@ class LoginController extends Controller
             }*/
 			$checkDevice=Device::first();
 
-            /*if ($checkDevice==''){
-                $activity = new \App\Activity();
-                $activity->data = 'محاولة فتح البرنامج على جهاز غير مصرح له بالتعامل مع البرنامج حيث عنوان الماك لهذا الجهاز هو ' . substr(exec('getmac'), 0, 17) . ' والـ IP هو ' . $ip;
-                $activity->notification = 1;
-                $activity->type = 0;
-                $activity->save();
-            }*/
+//            if ($checkDevice==''){
+//                $activity = new \App\Activity();
+//                $activity->data = 'محاولة فتح البرنامج على جهاز غير مصرح له بالتعامل مع البرنامج حيث عنوان الماك لهذا الجهاز هو ' . substr(exec('getmac'), 0, 17) . ' والـ IP هو ' . $ip;
+//                $activity->notification = 1;
+//                $activity->type = 0;
+//                $activity->save();
+//            }
         }catch (\Exception $e){
             $checkDb='error';
         }

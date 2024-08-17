@@ -1232,10 +1232,10 @@ $permit = \App\Permit::first();
     @if($state_create_backup)
         <script defer>
             /*create automatic backup*/
-            setTimeout(function () {
-                // $('#load').css('display', 'block');
-{{--                window.open('{{route('backups.createBackup','createAuto')}}', '_parent');--}}
-            }, 3000);
+            /*setTimeout(function () {
+                $('#load').css('display', 'block');
+                window.open('{{route('backups.createBackup','createAuto')}}', '_parent');
+            }, 3000);*/
         </script>
     @endif
     <script>
