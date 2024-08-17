@@ -1,0 +1,61 @@
+/*..............................start header*/
+#topHeader div.head{
+    background: rgba(12,84,96,.8);
+}
+#topHeader div.head div.dropdown,div.head div.row{
+    z-index: 1;
+}
+#topHeader nav ul li.active{
+    font-weight: 900!important;
+}
+#topHeader nav ul li>div{
+    font-size: 1.4rem!important;
+    text-align: right!important;
+    left: auto!important;
+}
+
+#topHeader nav ul li>a{
+    font-size: 1.6rem;
+}
+#topHeader nav a{
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+#topHeader nav ul li>div a:hover{
+    padding-right: 40px;
+    font-weight: bold;
+}
+#topHeader nav ul li>div a i.text-warning{
+   color: #d0bf25 !important;
+}
+#topHeader nav ul li>div a:hover i{
+   color: darkred !important;
+}
+#topHeader .dropdown-item.active, .dropdown-item:active{
+    color: black;
+    font-weight: bold;
+    background: white;
+}
+@media (max-width: 992px) {
+    #topHeader ul li{
+        border-bottom: 2px solid #ccc;
+        padding-right: 20px;
+        margin-left: 3rem;
+    }
+    #topHeader ul li>div{
+        margin-bottom: 8px!important;
+    }
+}
+@media all and (min-width:992px) and (max-width:1140px) {
+    #topHeader nav ul li > a{
+        font-size: 1.3rem!important;
+        font-weight: 900!important;
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
+
+}
+
+#a_header_home_page:hover #version{
+    display: inline!important;
+}

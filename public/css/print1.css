@@ -1,0 +1,40 @@
+@page {
+    size: auto;
+    margin-top: 4mm;
+    margin-left: 3mm;
+    margin-right: 3mm;
+    margin-bottom: 3mm;
+    padding: 0px
+}
+
+body{
+    direction: rtl!important;
+}
+*{
+    text-align: center!important;
+}
+ span,  input {
+    font-size: 1.5rem !important;
+}
+
+input {
+    padding: 25px 10px !important;
+}
+
+select {
+    height: 53px !important;
+    font-size: 1.5rem;
+}
+
+/* Just common table stuff. Really. */
+#mainTable ,#tableDetails { border-collapse: collapse; width: 100%; }
+#mainTable  td,#tableDetails td{padding:0px;padding-top:5px }
+#mainTable  select,#tableDetails select{margin-top:-5px;max-height: 42px!important; padding-top: 0px}
+@import url("app.css");
+@import url("main.css");
+
+
+.text-white{
+    color: black!important;
+}
+

@@ -1,0 +1,138 @@
+/*@import url("app.css");*/
+/*@import url('bootstrap.css');*/
+@import url("main.css");
+
+@page {
+    size: auto;
+    margin-top: 0mm;
+    padding: 0px;
+    padding-top: 3mm;
+    margin-left: 3mm;
+    margin-right: 3mm;
+    margin-bottom: 3mm;
+}
+@font-face {
+    font-family: 'font-ar';
+    src: url("../fonts/ArbFONTS-4_88.ttf");
+}
+body{
+    direction: rtl!important;
+    margin:0px;
+    padding: 0px;
+}
+*{
+    text-align: center;
+}
+
+
+
+#section_bill_container_check input[type='checkbox'], #section_bill_container_check input[type="radio"] {
+    transform: scale(2);
+    margin-left: 10px;
+}
+
+#section_bill_type select {
+    height: 53px !important;
+    font-size: 1.5rem;
+}
+
+#section_bill_design .b {
+    border: 2px black solid;
+}
+
+#section_bill_design .b-left {
+    border-left: 2px black solid;
+}
+
+#section_bill_design .width-15 {
+    width: 15%;
+}
+
+#section_bill_design th {
+    font-weight: 900;
+}
+
+#section_bill_design input {
+    padding-right: 10px;
+    width: 100%;
+    border: none;
+}
+
+#section_bill_design span[data-type='billNumber'], span[data-type='date'] {
+    cursor: pointer;
+}
+
+#section_bill_design #tableData input {
+    text-align: center;
+}
+
+#section_bill_design table tr td {
+    padding: 5px 15px;
+}
+
+#section_bill_design table tr td {
+    padding: 2px!important;
+}
+
+#section_bill_design table tr * {
+    white-space: nowrap;
+}
+
+#section_bill_design #tableData tbody tr td:nth-child(2) {
+    white-space: normal !important;
+}
+
+
+#section_bill_design{
+    padding: 20px!important;
+}
+
+#section_bill_design input{
+    min-height: 37px;
+}
+
+#section_small_bill_design .b {
+    border: 2px black solid;
+}
+#section_small_bill_design .small_bold {
+    font-weight: 600!important;
+}
+#section_small_bill_design .text-underline {
+    text-decoration: underline!important;
+}
+
+#section_small_bill_design td,#section_small_bill_design tr,#section_small_bill_design th {
+    border: .2px black solid;
+}
+
+
+#section_small_bill_design th {
+    font-weight: 900;
+}
+#section_small_bill_design th,#section_small_bill_design td {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+#section_small_bill_design input {
+    padding-right: 10px;
+    width: 100%;
+    border: none;
+}
+
+#section_small_bill_design span[data-type='billNumber'],#section_small_bill_design span[data-type='date'] {
+    cursor: pointer;
+}
+
+#section_small_bill_design #tableData input {
+    text-align: center;
+}
+
+#section_small_bill_design table tr td,#section_small_bill_design table tr th {
+    padding: 4px!important;
+}
+
+
+#section_small_bill_design #tableData tbody tr td:nth-child(2) {
+    white-space: normal !important;
+}

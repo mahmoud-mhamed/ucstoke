@@ -1,0 +1,335 @@
+/*go to top css*/
+#goToTop{
+    right: 30px;
+    bottom: 20px;
+    opacity: .4;
+    color: #af9a5f;
+    transition: all .3s ease-in-out;
+    z-index: 10;
+    display: none;
+}
+#goToTop:hover{
+    opacity: 1;
+}
+@media (max-width: 576px) {
+    #goToTop{
+        bottom: 65px;
+    }
+}
+/*main css*/
+.overflow-auto{
+    overflow: auto;
+}
+.pointer,select,option,input[type='radio'],input[type='checkbox']{
+    cursor: pointer;
+}
+.box{
+    box-shadow: 0 0 20px 0 black;
+    background: white;
+    border-radius: 8px;
+}
+.box-shadow{
+    box-shadow: 0 0 20px 0 black;
+    border-radius: 8px;
+}
+.border-radius{
+    border-radius:8px;
+}
+.table-success td {
+    background: #28A745;
+}
+.table-danger td {
+    background: #FFC107;
+}
+.overflow{
+    overflow: auto;
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+.span-date-range-picker {
+    min-width: 150px;
+}
+@media (max-width: 850px) {
+    .span-date-range-picker {
+        min-width: auto;
+    }
+}
+.font-ar{
+    font-family: 'font-ar';
+}
+.font-en,.invalid-feedback{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+#swal2-content{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+thead tr span{
+    color: red;
+    text-decoration: underline;
+}
+tr td{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+tr button,tr a{
+    font-family: 'font-ar';
+}
+::placeholder{
+    font-family: 'font-ar';
+}
+body {
+    font-family: 'font-ar';
+}
+input,textarea{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.btn-success{
+    background: #28a745;
+    border-color: #28a745;;
+}
+.btn-success:hover{
+    background: #208537;
+    border-color: #208537;
+}
+.table-warning{
+    background-color: #2d9aa6;
+    border-color: #2d9aa6;
+}
+.table-warning:hover{
+    background-color: #36bdcc!important;
+    border-color: #36bdcc;
+}
+.table-warning td{
+    background-color: #2d9aa6;
+}
+
+.table-hover .table-warning:hover > td,
+.table-hover .table-warning:hover > th {
+    background-color: #36bdcc!important;
+}
+.table-info{
+    background-color: #a995ae;
+    border-color: #a995ae;
+}
+.table-info:hover{
+    background-color: #c1b0c6!important;
+    border-color: #c1b0c6;
+}
+.table-info td{
+    background-color: #a995ae;
+}
+
+.table-hover .table-info:hover > td,
+.table-hover .table-info:hover > th {
+    background-color: #c1b0c6!important;
+}
+
+i.text-danger{
+    color: #e61313;
+}
+
+.hidden{/* this class used for hide column in library filter table*/
+    display: none;
+}
+table th{/* this class used for hide column in library order table*/
+    cursor: pointer;
+}
+table th.sorted{
+    position: relative;
+}
+table th.ascending:before {
+    content: "";
+    background: url("../img/sort.png") no-repeat;
+    width: 26px;
+    height: 25px;
+    background-size: contain;
+    position: absolute;
+    right: 10px;
+    top: 37px;
+}
+table th.descending:after {
+    content: "";
+    background: url("../img/sort.png") no-repeat;
+    width: 26px;
+    height: 25px;
+    background-size: contain;
+    transform: rotate(180deg);
+    position: absolute;
+    right: 10px;
+    top: -9px;
+}
+/*change style for alertify*/
+#alertify-logs{
+    max-width: 50%;
+}
+#alertify-logs  *{
+    direction: rtl;
+    text-align: right;
+    font-size: 1.5rem!important;
+    text-shadow: 2px 2px #823333;
+    cursor: pointer;
+}
+
+/*change style for select search library*/
+.filter-option-inner-inner{
+    text-align: right;
+}
+div.dropdown-menu.show[x-placement]{
+    right: 0px;
+    left: auto!important;
+}
+button[role="combobox"]{
+    font-size: 1.5rem;
+}
+ul[role='presentation'] *{
+    text-align: right;
+    padding-right: 10px;
+    font-size: 1.5rem;
+    font-family: font-en;
+}
+div.filter-option-inner-inner{
+    font-family: font-en;
+}
+button[role="combobox"]{
+    border: 1px solid #ced4da;
+}
+div.bs-searchbox input[role='combobox']{
+    text-align: right!important;
+}
+/*style for tooltip bootstrap*/
+.tooltips{/*the class used for ease write this class name*/
+
+}
+.tooltip-arrow,
+.tooltip > .tooltip-inner {
+    color: #FFFFFF;
+    padding: 0px 15px;
+    font-size: 20px;
+    /*background-color: #73AD21;
+    border: 1px solid green;*/
+}
+.arrow::before{
+    transform: scale(1.5);
+}
+/* Tooltip on top */
+.tooltip-inner {
+    max-width: 350px;
+    /* If max-width does not work, try using width instead */
+    /*width: 350px;*/
+}
+@media all and (max-width:800px) {
+    .bs-tooltip-left .tooltip-inner,.bs-tooltip-right .tooltip-inner {
+        max-width: 220px;
+    }
+}
+.bs-tooltip-top > .tooltip-inner {
+    background-color: #73AD21;
+    border: 1px solid green;
+}
+.bs-tooltip-top .arrow::before {
+    border-top: 5px solid green;
+}
+/* Tooltip on bottom */
+.bs-tooltip-bottom > .tooltip-inner {
+    background-color: #3227ff;
+    border: 1px solid blue;
+}
+.bs-tooltip-bottom .arrow::before {
+    border-bottom: 5px solid blue;
+}
+/* Tooltip on left */
+.bs-tooltip-left > .tooltip-inner {
+    background-color: darkred;
+    border: 1px solid red;
+}
+.bs-tooltip-left .arrow::before {
+    border-left: 5px solid red;
+}
+/* Tooltip on right */
+.bs-tooltip-right .arrow::before {
+    border-right: 5px solid black;
+}
+
+/*end main*/
+/*color for icon in select picker*/
+span.check-mark{
+    color: #34d534;
+}
+
+
+textarea.form-control{
+    font-size: 1.2rem;
+}
+
+/*style for input data-date*/
+@media all and (max-width:569px) {
+    input.input_date_range_picker{
+        text-align: right!important;
+    }
+}
+
+.not_permits{/*for show when try to show what is in upgrade*/
+    /*border: 1px red solid;
+    opacity: .7;*/
+    display: none!important;
+}
+.permits_hide{/*to hide if not allowed to use*/
+    display: none!important;
+}
+
+#asidContainerIconRight{
+    display: none;
+    width: 0px;
+}
+body.active-right-link{
+    padding-right: 50px;
+}
+/*start stile for icon in right side*/
+#asidContainerIconRight.active{
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    top: 0px;
+    width: 50px;
+    display: block;
+}
+#asidContainerIconRight.active a{
+    text-decoration: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    opacity: .8;
+    cursor: pointer;
+    display: block;
+    border-bottom: 1px black solid;
+}
+#button_toggle_show_right_side{
+    opacity: 0.33;
+}
+#button_toggle_show_right_side:hover{
+    opacity: 1;
+}
+@media (max-width: 576px){
+    #asidContainerIconRight,#button_toggle_show_right_side{
+        display: none!important;
+    }
+    body{
+        padding-right: 0px!important;
+    }
+}
+#asidContainerIconRight a:hover {
+    opacity: 1;
+}
+#asidContainerIconRight a i{
+    margin-top: 5px;
+}
+#asidContainerIconRight a {
+    background: #02783A;
+}
+#asidContainerIconRight a:hover {
+    background: #085f55;
+}
+
+/*end stile for icon in right side*/
