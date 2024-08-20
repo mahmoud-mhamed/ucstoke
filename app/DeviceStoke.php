@@ -9,7 +9,7 @@ class DeviceStoke extends Model
 {
     //
     function stoke(){
-        return $this->belongsTo('App\stoke');
+        return $this->belongsTo('App\Stoke');
     }
 
 

@@ -9,7 +9,7 @@ class Device extends Model
 {
     //
     function mainStoke(){
-        return $this->hasOne('App\stoke','id','default_stoke');
+        return $this->hasOne('App\Stoke','id','default_stoke');
     }
 
     function allowedStoke(){
