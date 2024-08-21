@@ -162,37 +162,6 @@
             ?>
         @endif
     </script>
-
-    <script>
-        //check device
-        $.ajax({
-            url: '{{route('users.check_device')}}',
-            method: 'POST',
-            data: {
-                serial: Cookie.get('device_serial'),
-            },
-            dataType: 'JSON',
-            success: function (data) {
-                if (data == 'change') {
-                    alertify.success('تم تغير ال Ip بنجاح');
-                    design.useSound('info');
-                }
-            },
-            error: function (e) {
-
-            }
-        });
-    </script>
-    <script defer>
-        //redirect to home page if login by other login tap
-        var checkStateLogin=true;
-        window.setInterval(function () {
-            if (checkStateLogin && Cookie.get('succsess_login') == true) {
-                checkStateLogin=false;
-                window.open('{{route('home')}}', '_parent');
-            }
-        },1000);
-    </script>
 @endsection
 
 
