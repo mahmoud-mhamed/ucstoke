@@ -30,11 +30,11 @@ class valid_price implements Rule
 
         $s=Setting::first();
         if ($s->use_small_price){
-            if (preg_match("/^[0-9]{1,6}([.][0-9][0-9]?[0-9]?)?$/",$value)){
+            if (preg_match("/^[0-9]{1,15}([.][0-9][0-9]?[0-9]?)?$/",$value)){
                 return true;
             }
         }else{
-            if (preg_match("/^[0-9]{1,6}([.][0-9][0-9]?)?$/",$value)){
+            if (preg_match("/^[0-9]{1,15}([.][0-9][0-9]?)?$/",$value)){
                 return true;
             }
         }
