@@ -21,12 +21,10 @@ use App\Rules\valid_qte;
 use App\SaleMakeQteDetails;
 use App\Setting;
 use App\Store;
-use http\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -1238,23 +1236,24 @@ class BillController extends Controller
 
     }
 
-    public function print($id = '')
+    public function print($id = '', Request $request)
     {
+        $print_dismissal_notice = data_get($request, 'dismissal_notice');
         $device = Auth::user()->device;
         $setting = Setting::first();
+
         if ($id == '' || $id == 0) {
-            return view('bills.print_bill', [
-                'bill' => Bill::with('account')->with('details')->where('device_id', $device->id)->latest()->first(),
-                'design' => BillPrint::where('id', ($device->design_bill_print ? $device->design_bill_print : 1))->first(),
-                'setting' => $setting,
-            ]);
+            $bill = Bill::with('account')->with('details')->where('device_id', $device->id)->latest()->first();
         } else {
-            return view('bills.print_bill', [
-                'bill' => Bill::with('account')->with('details')->where('device_id', $device->id)->findOrFail($id),
-                'design' => BillPrint::where('id', ($device->design_bill_print ? $device->design_bill_print : 1))->first(),
-                'setting' => $setting,
-            ]);
+            $bill = Bill::with('account')->with('details')->where('device_id', $device->id)->findOrFail($id);
         }
+        return view('bills.print_bill', [
+            'bill' => $bill,
+            'design' => BillPrint::where('id', ($device->design_bill_print ? $device->design_bill_print : 1))->first(),
+            'setting' => $setting,
+            'print_dismissal_notice'=>$print_dismissal_notice,
+            'new_page' => '<div style="page-break-after:always"><span style="display:none">&nbsp;</span></div>'
+        ]);
     }
 
     public function create_bill_back($id, $type = 0)//type 0 for bill buy,1 for bill sale

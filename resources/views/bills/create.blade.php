@@ -9,8 +9,8 @@ $permit = \App\Permit::first();
  */ ?>
 @extends('layouts.app')
 @section('title')
-       إنشاء
-            {{$type==0?'فاتورة شراء':($type==1?'فاتورة بيع':'عرض أسعار بيع')}}
+    إنشاء
+    {{$type==0?'فاتورة شراء':($type==1?'فاتورة بيع':'عرض أسعار بيع')}}
 @endsection
 @section('css')
     <style>
@@ -670,6 +670,11 @@ $permit = \App\Permit::first();
                                 <div class='text-center mt-1 {{$type==2?'d-none':''}}'>
                                     <input id="check_print_bill" type="checkbox" class="tooltips"
                                            data-placement="right" title="طباعة الفاتورة عند الحفظ">
+
+                                    <input id="check_print_bill2" type="checkbox" class="tooltips"
+                                           style="margin: 0 10px"
+                                           data-placement="right" title="طباعة اذن صرف عند الحفظ">
+
                                     <button type="submit" id="button_save_bill"
                                             class='btn font-weight-bold btn-warning px-4 tooltips'
                                             data-placement="left" title="يمكن إستخدام الزر + لحفظ الفاتورة ">
@@ -912,10 +917,10 @@ $permit = \App\Permit::first();
         $('#selectMessage').trigger('change');
 
         //create new account
-        var titleVal="{{$type==0?'فاتورة شراء ':($type==1?'فاتورة بيع ':'عرض أسعار بيع ')}}";
-        var titleItem=$('title');
+        var titleVal = "{{$type==0?'فاتورة شراء ':($type==1?'فاتورة بيع ':'عرض أسعار بيع ')}}";
+        var titleItem = $('title');
         $('#select_account_name').change(function () {
-            titleItem.html(titleVal+'('+$('#select_account_name option:selected').html()+')');
+            titleItem.html(titleVal + '(' + $('#select_account_name option:selected').html() + ')');
             if ($(this).val() == '-1') {
                 if ($('#div_container_new_account').hasClass('d-none')) {
                     $('#div_container_new_account').removeClass('d-none');
@@ -933,7 +938,7 @@ $permit = \App\Permit::first();
                     @endif
                     design.updateNiceScroll();
                 }
-                titleItem.html(titleVal+'('+$('#input_new_account_name').val()+')');
+                titleItem.html(titleVal + '(' + $('#input_new_account_name').val() + ')');
             } else {
                 $('#input_new_account_tell,#input_new_account_name').removeAttr('required');
                 if (!$('#div_container_new_account').hasClass('d-none')) {
@@ -989,9 +994,9 @@ $permit = \App\Permit::first();
         });
         //search product by barcode
         var stateSearchBarcode = true;//to prevent search when old search not finish
-        function searchBarcode(barcode='') {
+        function searchBarcode(barcode = '') {
             if (stateSearchBarcode) {
-                if(barcode!=''){
+                if (barcode != '') {
                     $('#input_barcode').attr('readonly', 'readonly');
                     stateSearchBarcode = false;
                     $.ajax({
@@ -1027,14 +1032,14 @@ $permit = \App\Permit::first();
                                         price = data['price_sale1'];
                                     @endif
                                 }
-                                if (!(price > 0) && $('#inputProductPrice').val() != '00' ) {
+                                if (!(price > 0) && $('#inputProductPrice').val() != '00') {
                                     design.useSound('error');
                                     alertify.error("لا يوجد سعر إفتراضى للمنتج المحدد,برجاء كتابة السعر!");
                                     return;
                                 }
 
-                                if(price=='00')
-                                    price=0;
+                                if (price == '00')
+                                    price = 0;
                                 if (checkIfProductExistInTable(data['id'], '0', price)) {
                                     addRowToTable(data['id'], data['name'], '0', data['product_unit']['name'],
                                         qte, price, 1);
@@ -1077,7 +1082,7 @@ $permit = \App\Permit::first();
                             console.log(e);
                         }
                     });
-                }else{
+                } else {
                     design.useSound('info');
                     alertify.error("برجاء إدخال الباركود!");
                     $('#input_barcode').select();
@@ -1206,8 +1211,8 @@ $permit = \App\Permit::first();
 
         //add row to table
         function addRowToTable(productId, productName, relation_unit_id, qteName, qteVal, price, qteAddByMainUnit = '', existQteInStoke = '', mainUnitName = '', relation_qte = '1') {
-            if (price=='00')
-                price=0;
+            if (price == '00')
+                price = 0;
             $('#mainTable tbody').prepend(
                 "<tr class='table-success'>" +
                 "<td data-relation_qte='" + relation_qte + "' data-price='" + price + "' data-product_id='" + productId + "' data-unit_id='" + relation_unit_id + "' data-qte_val='" + qteVal + "' data-qte_name='" + qteName + "'" +
@@ -1687,7 +1692,7 @@ $permit = \App\Permit::first();
                 return;
             }
             //check if price not valid
-            if (($('#inputEditProductPrice').hasClass('is-invalid') || $('#inputEditProductPrice').val() == 0)&& $('#inputEditProductPrice').val() != '00' ) {
+            if (($('#inputEditProductPrice').hasClass('is-invalid') || $('#inputEditProductPrice').val() == 0) && $('#inputEditProductPrice').val() != '00') {
                 alertify.error('برجاء التحقق من السعر ');
                 design.useSound('error');
                 $('#inputEditProductPrice').select();
@@ -1750,11 +1755,11 @@ $permit = \App\Permit::first();
         //disable submit when enter in input in form
         var stateSubmitByInput = false;
         design.disable_input_submit_when_enter('#mainForm input');
-       /* $('#mainForm input').keydown(function (e) {
-            if (e.keyCode == 13) {
-                stateSubmitByInput = true;
-            }
-        });*/
+        /* $('#mainForm input').keydown(function (e) {
+             if (e.keyCode == 13) {
+                 stateSubmitByInput = true;
+             }
+         });*/
 
         var stateCheckIfTotalPaidGreaterThanTotalPrice = false;
         var printLink = "{{route('bills.print')}}";
@@ -1876,11 +1881,15 @@ $permit = \App\Permit::first();
                     if (data == 'success') {
                         // design.useSound('success');
                         if ($('#check_print_bill').prop('checked')) {
+                            let add_print2 = null;
+                            if ($('#check_print_bill2').prop('checked')) {
+                                add_print2 = '?dismissal_notice=true'
+                            }
                             if ($('#check_print_in_new_window').prop('checked')) {
-                                window.open('{{route('bills.print')}}', '_blank');
+                                window.open('{{route('bills.print')}}' + add_print2, '_blank');
                                 window.location.reload(true);
                             } else {
-                                $('#iframe_print_bill').removeClass('d-none').attr('src', printLink);
+                                $('#iframe_print_bill').removeClass('d-none').attr('src', printLink + add_print2);
                                 /*setTimeout(function () {
                                     window.location.reload(true);
                                 },2000);*/
@@ -1920,7 +1929,7 @@ $permit = \App\Permit::first();
                 var keyCode = e.keyCode || e.which;
                 if (keyCode == 40) {
                     $('#input_barcode').select();
-                }else if (keyCode === 38 ) {
+                } else if (keyCode === 38) {
                     $('#input_product_qte').select();
                 }
             }
@@ -1928,19 +1937,19 @@ $permit = \App\Permit::first();
         $('#input_product_qte').on('keyup keypress', function (e) {
             if ($('#radioBarcode').prop('checked')) {
                 var keyCode = e.keyCode || e.which;
-                if ( keyCode == 40) {
+                if (keyCode == 40) {
                     $('#inputProductPrice').select();
-                }else if (keyCode === 38 ) {
+                } else if (keyCode === 38) {
                     $('#input_barcode').select();
                 }
             }
         });
         //go to qte when key down in barcode and go to price when key up
-        $('#input_barcode').on('keyup',function (e) {
+        $('#input_barcode').on('keyup', function (e) {
             var keyCode = e.keyCode || e.which;
-            if (keyCode === 40 ) {
+            if (keyCode === 40) {
                 $('#input_product_qte').select();
-            }else if(keyCode===38){
+            } else if (keyCode === 38) {
                 $('#inputProductPrice').select();
             }
         });
@@ -2123,8 +2132,8 @@ $permit = \App\Permit::first();
                     $('#section_print_price_show').removeClass('d-none');
                     $('#section_bill_design').parent().printArea({
                         extraCss: '{{asset('css/print_bill.css')}}',
-                        mode:'popup',
-                        popClose:true,
+                        mode: 'popup',
+                        popClose: true,
                         // autoCloseAfterPrint:true,
                         autoReloadAfterPrint: true,
                     });
@@ -2132,7 +2141,7 @@ $permit = \App\Permit::first();
                         window.location.reload();
                     })*/
                     // setInterval(function(){window.location.reload(); }, 2000);
-                   /* window.open('{{route('bills.create',2)}}', '_blank');
+                    /* window.open('{{route('bills.create',2)}}', '_blank');
                     setInterval(function(){
                         window.close();
                     }, 2000);*/
