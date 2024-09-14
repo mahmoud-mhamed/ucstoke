@@ -322,8 +322,8 @@ $permit = \App\Permit::first();
                             takeMoneyFromCustomer = " <a class='btn btn-sm btn-primary tooltips' href='accounts/add_or_subtract_debt/" + data[i]['id'] + "/1' data-placement='left'  title='سيتم خصم المبلغ من الحساب وإضاته إلى الدج '><span class='h5 text-dark'>أخذ مال </span></a>";
                         }
                         if (data[i]['account'] == 0) {
-                            takeMoneyFromCustomer='';
-                            payMoneyToSupplierOrSupplierCustomer='';
+                            // takeMoneyFromCustomer='';
+                            // payMoneyToSupplierOrSupplierCustomer='';
                         }
                         @if(Auth::user()->type==1||Auth::user()->allow_delete_account)
                         if (data[i]['account'] == 0) {
