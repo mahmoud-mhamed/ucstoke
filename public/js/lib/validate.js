@@ -422,9 +422,9 @@ function validate(Element,validation,patternType='') { /*item type not important
         }
         else /*price:message*/
         if (data[0]=='price'){
-            var rule=/^([0]|([1-9][0-9]{0,5}))([.][0-9][0-9]?)?$/;
+            var rule=/^([0]|([1-9][0-9]{0,10}))([.][0-9][0-9]?)?$/;
             if (Element.is('[data-small_price]')){
-                rule=/^([0]|([1-9][0-9]{0,5}))([.][0-9][0-9]?[0-9]?)?$/;
+                rule=/^([0]|([1-9][0-9]{0,10}))([.][0-9][0-9]?[0-9]?)?$/;
             }
             // var rule=/^[0-9]{1,6}([.][0-9][0-9]?)?$/;
             if (patternType=='price'){
