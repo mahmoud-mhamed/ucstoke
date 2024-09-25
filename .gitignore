@@ -11,3 +11,7 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /.idea
+.well-know/
+error_log
+public/error_log
+
