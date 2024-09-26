@@ -14,4 +14,4 @@ yarn-error.log
 .well-know/
 error_log
 public/error_log
-
+.git
