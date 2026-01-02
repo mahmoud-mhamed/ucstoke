@@ -321,6 +321,7 @@ class BackupController extends Controller
             $activty->type = 3;
             $activty->save();
 
+            return back();
             File::deleteDirectory(public_path() . '\\' . 'myBackUp');
             mkdir(public_path() . '\\' . 'myBackUp');
             $cn = new \mysqli(env('REDIS_HOST'), env('DB_USERNAME'),
