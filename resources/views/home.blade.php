@@ -1223,10 +1223,10 @@ $permit = \App\Permit::first();
     @if($state_download_backup && (Auth::user())->type==1 || Auth::user()->allow_download_backup)
         <script defer>
             /*download automatic backup*/
-            setTimeout(function () {
+          /*  setTimeout(function () {
                 $('#link_download_backup').click();
                 window.open('{{route('backups.downloadBackup')}}', '_parent');
-            }, 3000);
+            }, 3000);*/
         </script>
     @endif
     @if($state_create_backup)
