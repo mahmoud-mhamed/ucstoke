@@ -206,7 +206,7 @@ $permit = \App\Permit::first();
                                             {{round($l['min_qte'],2)}} {{$l['product_unit']}}
                                         </td>
                                         <td>
-                                            <a href='{{route('products.edit',['id'=>$l['product_id']])}}'
+                                            <a href='{{route('products.edit',['product'=>$l['product_id']])}}'
                                                class='btn  p-0 bg-transparent border-0 text-info tooltips'
                                                data-placement="left"
                                                title="تعديل المنتج (لمنع ظهور المنتج فى النواقص قم بجعل أقل كمية فى المنتج = 0)"><i
