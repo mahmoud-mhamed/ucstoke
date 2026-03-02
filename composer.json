@@ -12,7 +12,10 @@
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.6",
-        "rap2hpoutre/laravel-log-viewer": "^2.4"
+        "mhamed/laravel-slack-errors-watch": "^1.0",
+        "opcodesio/log-viewer": "^3.23",
+        "rap2hpoutre/laravel-log-viewer": "^2.4",
+        "timokoerber/laravel-one-time-operations": "^1.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
