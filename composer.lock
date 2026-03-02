@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e4b13217a888b0df5c12b68d3f5aa2b",
+    "content-hash": "83adefca8ce310d2560a48f2481b954c",
     "packages": [
         {
             "name": "brick/math",
@@ -2074,6 +2074,55 @@
                 }
             ],
             "time": "2025-12-07T16:03:21+00:00"
+        },
+        {
+            "name": "mhamed/laravel-slack-errors-watch",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mahmoud-mhamed/laravel-slack-errors-watch",
+                "reference": "6a5f880c6b3d3b72d4f0bc43b349d941238f8118"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mahmoud-mhamed/laravel-slack-errors-watch/zipball/6a5f880c6b3d3b72d4f0bc43b349d941238f8118",
+                "reference": "6a5f880c6b3d3b72d4f0bc43b349d941238f8118",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/log": "^10.0|^11.0|^12.0",
+                "illuminate/support": "^10.0|^11.0|^12.0",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "SlackErrorsWatch": "Mhamed\\SlackErrorsWatch\\Facades\\SlackErrorsWatch"
+                    },
+                    "providers": [
+                        "Mhamed\\SlackErrorsWatch\\SlackErrorsWatchServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mhamed\\SlackErrorsWatch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Automatic Slack error reporting for Laravel applications",
+            "keywords": [
+                "errors",
+                "exceptions",
+                "laravel",
+                "monitoring",
+                "slack"
+            ],
+            "time": "2026-02-13T17:54:44+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -8120,7 +8169,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": "^8.2|^8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
