@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.6",
         "mhamed/laravel-slack-errors-watch": "^1.0",
+        "opcodesio/log-viewer": "^3.23",
         "rap2hpoutre/laravel-log-viewer": "^2.4"
     },
     "require-dev": {
