@@ -13,8 +13,8 @@ return new class extends OneTimeOperation
     public function process(): void
     {
         if (!Schema::hasTable('bill_prints')) {
-            $migration = include database_path('migrations/2018_01_26_230111_create_bill_prints_table.php');
-            $migration->up();
+            include_once database_path('migrations/2018_01_26_230111_create_bill_prints_table.php');
+            (new \CreateBillPrintsTable)->up();
         }
 
         if (DB::table('bill_prints')->count() === 0) {
